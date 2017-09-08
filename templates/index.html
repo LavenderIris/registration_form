@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+
+
+
+
+<html>
+
+<head>
+    <title>Form Test Index</title>
+</head>
+<style type="text/css">
+	span {
+		display: block;
+		padding: 5px 0px 5px 0px;
+	}
+
+	p{
+		margin: 0px;
+	}
+
+
+</style>
+
+<body>
+    <h1>Index Page</h1>
+    <h3>Create a User</h3>
+
+    <form action='/is_valid' method='post'>
+        <span>First Name: <input type='text' name='first_name'> </span>
+        <span>Last Name: <input type='text' name='last_name'> </span>
+        <span> Password: <input type='text' name='password'></span>
+        <span> Confirm Password: <input type='text' name='confirm_password'></span>
+        <span> Email: <input type='text' name='email'></span>
+        <input type='submit' value='Create User'>
+    </form>
+    <br>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+  		{% if messages %}
+    		{% for error, message in messages %}
+      			<p>{{error}}  Reason: {{message}}  </p>
+    		{% endfor %}
+  		{% endif %}
+	{% endwith %}
+
+</body>
+
+</html>
+
+
