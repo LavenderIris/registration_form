@@ -1,0 +1,2 @@
+ALTER TABLE mydb.users
+MODIFY salt VARCHAR(255);

@@ -22,16 +22,24 @@
 </style>
 
 <body>
-    <h1>Index Page</h1>
-    <h3>Create a User</h3>
-
+    <h1>Login or Register</h1>
+    <h3>Login</h3>
+    <form action='/login' method='post'>
+        <span> Email: <input type='text' name='email'></span>
+        <span> Password: <input type='text' name='password'></span>
+        
+        <input type='submit' value='Login'>
+    </form>
+    
+    <h3>Register</h3>
     <form action='/is_valid' method='post'>
         <span>First Name: <input type='text' name='first_name'> </span>
         <span>Last Name: <input type='text' name='last_name'> </span>
+        <span> Email: <input type='text' name='email'></span>
         <span> Password: <input type='text' name='password'></span>
         <span> Confirm Password: <input type='text' name='confirm_password'></span>
-        <span> Email: <input type='text' name='email'></span>
-        <input type='submit' value='Create User'>
+        
+        <input type='submit' value='Register'>
     </form>
     <br>
     {% with messages = get_flashed_messages(with_categories=true) %}
